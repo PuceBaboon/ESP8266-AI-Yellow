@@ -1,5 +1,5 @@
 /*
- * $Id: user_config.h,v 1.2 2016/11/17 00:05:03 anoncvs Exp $
+ * $Id: user_config.h,v 1.3 2016/11/17 12:49:25 anoncvs Exp $
  *
  * Configuration for local set-up (ie:- Access-point ID & PWD).
  */
@@ -60,7 +60,7 @@
 /*
  * MQTT SETUP
  */
-#define MQTT_HOST	"hazeltonrig.pucebaboon.com"
+#define MQTT_HOST	"YOUR.MQTT.SERVER	// !!You MUST change this!!"
 #define MQTT_PORT	1883
 #define MQTT_BUF_SIZE	2048
 #define MQTT_KEEPALIVE	120	/* In seconds. */
@@ -73,9 +73,9 @@
 #define MQTT_USER	"Puce_USER"
 #define MQTT_PASS	"Puce_PASS"
 
-#define TOPIC1		"TIME/Epoch"
-#define TOPIC2		"tdata/raw"
-#define TOPIC3		"temperature"
+#define TOPIC1		"YOUR/FIRST/TOPIC"	// !!You MUST change this!!"
+#define TOPIC2		"YOUR/SECOND_TOPIC"	// !!You MUST change this!!"
+#define TOPIC3		"YOUR_THIRD_TOPIC"	// !!You MUST change this!!"
 
 #define MQTT_RECONNECT_TIMEOUT 	5	/* In Seconds. */
 
