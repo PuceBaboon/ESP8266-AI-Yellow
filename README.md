@@ -1,6 +1,8 @@
 # ESP8266-AI-Yellow
 Repository of ESP8266 demo programmes specific to the AI-Thinker "Yellow Development Board"
 
+The hardware information related to these demo programs is available at <https://esp8266hints.wordpress.com/2016/11/15/yellow-doorbelldash-project/>.  Note that these programs will work on an unmodified "Yellow Development Board", but obviously the auto power-off will not function.
+
 There are currently two different demos in this repository.  Both use the same basic hardware, the AI-Thinker produced "Yellow Development Board", which has been widely available on Ebay and Aliexpress for almost two years now.
 
 The first demo is named:- `Initial_Power+LEDs.ino`
