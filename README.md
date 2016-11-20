@@ -3,6 +3,9 @@ Repository of ESP8266 demo programmes specific to the AI-Thinker "Yellow Develop
 
 The hardware information related to these demo programs is available at <https://esp8266hints.wordpress.com/2016/11/15/yellow-doorbelldash-project/>.  Note that these programs will work on an unmodified "Yellow Development Board", but obviously the auto power-off will not function. The Eagle board files for the auto-latching switch are available in the `Eagle` sub-directory.  The board itself is also available from OSH Park's shared projects page <https://oshpark.com/shared_projects/iFWjTLa5>
 
+![auto-power_latch_brd](https://cloud.githubusercontent.com/assets/10677593/20459344/f5b5eafe-af00-11e6-8e52-2f7d29bd5b1a.png)
+
+
 ## Demo Programmes
 
 There are currently two different demos in this repository.  Both use the same basic hardware, the AI-Thinker produced "Yellow Development Board", which has been widely available on Ebay and Aliexpress for almost two years now.
