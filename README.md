@@ -25,5 +25,5 @@ The second demo is named:- `MQTT+LEDs.ino`
 
 The web dashboard to see the data being handled by the HiveMQ server is available at <http://www.mqtt-dashboard.com/>.  Note that the server is handling many millions of requests per day and it's not unusual to see more than 1,000 active clients at any one time, so it can be quite difficult to spot your particular data popping up on the dashboard.  A better option is probably to install a version of the Mosquitto broker on your local machine.
 
-The Mosquitto package comes with two command-line utilities, mosquitto_pub and mosquitto_sub, which allow you to publish or subscribe to topics from your desktop (for example, `mosquitto_sub -h broker.hivemq.com -t Yellow/LDR` will subscribe to the "Yellow/LDR" topic from the HiveMQ public server.  You will see your own data as it is published, as well as anyone else's data being published to that same topic).
+The Mosquitto package comes with two command-line utilities, mosquitto_pub and mosquitto_sub, which allow you to publish or subscribe to topics from your desktop without needing to run the actual server process (for example, `mosquitto_sub -h broker.hivemq.com -t Yellow/LDR` will subscribe to the "Yellow/LDR" topic from the HiveMQ public server.  You will see your own data as it is published, as well as anyone else's data being published to that same topic).
 
