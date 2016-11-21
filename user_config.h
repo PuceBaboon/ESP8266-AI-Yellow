@@ -1,5 +1,5 @@
 /*
- * $Id: user_config.h,v 1.3 2016/11/17 12:49:25 anoncvs Exp $
+ * $Id: user_config.h,v 1.6 2016/11/21 00:18:32 anoncvs Exp $
  *
  * Configuration for local set-up (ie:- Access-point ID & PWD).
  */
@@ -10,7 +10,9 @@
  */
 #define DEBUG		1		// Verbose output. "#undef" to disable.
 #define RUNT_MAX        3 * 60 * 1000   // Max run time (3-minutes) before auto power-off.
-#define MSR_TM_DLY      2 * 1000        // Delay time (2-seconds) between LDR measurements.
+#define MSR_TM_DLY	5 * 1000	// Delay time (5-seconds) between LDR measurements.
+#define MQTT_TM_DELAY	30 * 1000	// Delay between MQTT publishings (30-seconds).
+#define LOCATION	"Nagano, JAPAN"	// Your specific location here (will be published).
 
 
 /*
@@ -42,10 +44,10 @@
 #define STA_TYPE	AUTH_WPA2_PSK
 
 /* Assign a static IP address to your ESP8266 */
-#define WIFI_IPADDR	{ 192, 168, 172, 236 }
-#define WIFI_NETMSK	{ 255, 255, 255, 0 }
-#define WIFI_GATEWY	{ 192, 168, 172, 51 }
-#define WIFI_DNSSRV	{ 192, 168, 172, 39 }
+#define WIFI_IPADDR	{ 192, 168, 170, 2 }	// !!You SHOULD change this to match your local network!!
+#define WIFI_NETMSK	{ 255, 255, 255, 0 }	// !!You SHOULD change this to match your local network!!
+#define WIFI_GATEWY	{ 192, 168, 170, 1 }	// !!You SHOULD change this to match your local network!!
+#define WIFI_DNSSRV	{ 192, 168, 170, 1 }	// !!You SHOULD change this to match your local network!!
 #define WIFI_CHANNEL	6		// !!You MUST change this!! -- Restart might be unreliable without this set.
 
 /*
@@ -60,22 +62,41 @@
 /*
  * MQTT SETUP
  */
-#define MQTT_HOST	"YOUR.MQTT.SERVER	// !!You MUST change this!!"
+/*
+ * The "broker.hivemq.com" server is a free, publicly accessible MQTT
+ * service with a "dashboard" web monitor available at:-
+ *               http://www.mqtt-dashboard.com/
+ * If you don't have your own MQTT server, you can use this service to
+ * subscribe and publish.  However, please do notethat HiveMQ gets
+ * very, very busy at times (it's not uncommon to see in excess of 1,000
+ * active clients at certain times of the day), so it can actually be quite
+ * difficult to spot your topics popping up on the dashboard.
+ */
+// #define MQTT_HOST	"YOUR.MQTT.SERVER	// !!You MUST change this!!"
+#define MQTT_HOST	"broker.hivemq.com"	/* Publicly accessible server. */
 #define MQTT_PORT	1883
 #define MQTT_BUF_SIZE	2048
 #define MQTT_KEEPALIVE	120	/* In seconds. */
 #define MQCONDEL	150	/* MQTT connection wait delay. */
-#define MQ_TOPIC_SIZE	256	/* Characters. */
+#define MQ_TOPIC_MAX	256	/* Maximum size in characters. */
 #define	TEMPR_SIZE	8	/* Temperature string conv temp storage. */
 #define STRBUFF_SIZE	15	/* String buffer size. */
 
-#define MQTT_CLIENT_ID	"Puce_%08X"
-#define MQTT_USER	"Puce_USER"
-#define MQTT_PASS	"Puce_PASS"
+#define MQTT_CLIENT_ID	"ESP8266_%06X"
+// #define MQTT_USER	"ESP8266_USER"	/* Unused in this version. */
+// #define MQTT_PASS	"ESP8266_PASS"	/* Unused in this version. */
 
-#define TOPIC1		"YOUR/FIRST/TOPIC"	// !!You MUST change this!!"
-#define TOPIC2		"YOUR/SECOND_TOPIC"	// !!You MUST change this!!"
-#define TOPIC3		"YOUR_THIRD_TOPIC"	// !!You MUST change this!!"
+/*
+ * The following topics, "timestamp" and "Yellow/LDR" are suggested 
+ * for demo use with the free, "broker.hivemq.com", public server. 
+ * Change them to whatever you want if you're using your own, local
+ * broker.
+ */
+// #define TOPIC1		"YOUR/FIRST/TOPIC"	// !!You MUST change this!!"
+// #define TOPIC2		"YOUR/SECOND_TOPIC"	// !!You MUST change this!!"
+// #define TOPIC3		"YOUR_THIRD_TOPIC"	// !!You MUST change this!!"
+#define TOPIC1		"timestamp"
+#define TOPIC2		"Yellow/LDR"
 
 #define MQTT_RECONNECT_TIMEOUT 	5	/* In Seconds. */
 
