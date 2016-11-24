@@ -329,7 +329,6 @@ void loop() {
     if (now - prevMsrTm > MSR_TM_DLY) {
         prevMsrTm = now;
 #ifdef DEBUG
-//    int light = (unsigned int) analogRead(A0);
         Serial.print("LDR value: ");
         Serial.println(analogRead(A0));
 #endif  /* DEBUG */
