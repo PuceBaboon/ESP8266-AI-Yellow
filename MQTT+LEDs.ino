@@ -445,7 +445,7 @@ void loop() {
 #ifdef DEBUG
         Serial.println(buff);
 #endif
-        sendmqttMsg((char *)TOPIC2, (char *)buff);
+        sendmqttMsg((char *) TOPIC2, buff);
     }
 
     ChkAutoOff();
