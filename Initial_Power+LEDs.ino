@@ -123,15 +123,12 @@ void LatchOn() {
 void LatchOff() {
     digitalWrite(POWER_SW, LOW);
 #ifdef DEBUG
-    Serial.println("Power switch latch off.");
+    Serial.println("Power switch latched off.");
 #endif
 }
 void ChkAutoOff() {
     unsigned long tm_now = millis();
     if (tm_now >= RUNT_MAX) {
-#ifdef DEBUG
-        Serial.println("Time limit P/Off.");
-#endif
         LatchOff();
     }
 }
