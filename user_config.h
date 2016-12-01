@@ -82,7 +82,7 @@
 #define	TEMPR_SIZE	8	/* Temperature string conv temp storage. */
 #define STRBUFF_SIZE	15	/* String buffer size. */
 
-#define MQTT_CLIENT_ID	"ESP8266_%06X"
+#define MQTT_CLIENT_ID	"YDB_%08X"	/* Yellow Dev Board + Unique ID */
 // #define MQTT_USER	"ESP8266_USER"	/* Unused in this version. */
 // #define MQTT_PASS	"ESP8266_PASS"	/* Unused in this version. */
 
