@@ -1,5 +1,5 @@
 /*
- * $Id: user_config.h,v 1.6 2016/11/21 00:18:32 anoncvs Exp $
+ * $Id: user_config.h,v 1.7 2016/12/01 10:28:14 anoncvs Exp $
  *
  * Configuration for local set-up (ie:- Access-point ID & PWD).
  */

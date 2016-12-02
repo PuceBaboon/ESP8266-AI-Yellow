@@ -1,5 +1,5 @@
 /*
- * $Id: MQTT+LEDs.ino,v 1.2 2016/11/21 00:14:28 anoncvs Exp $
+ * $Id: MQTT+LEDs.ino,v 1.3 2016/12/01 10:29:20 anoncvs Exp $
  *
  * ESP8266 doorbell.  MQTT required.
  *
@@ -66,7 +66,7 @@ const byte dnssrv[] = WIFI_DNSSRV;
 /* ----------------- MQTT ---------------- */
 /*
  * Change the defined MQTT packet size and keepalive
- * to larger values, as recommended by Theo.
+ * to larger values.
  *
  * Note that the PubSubClient library should be included
  * -after- these redefines, not before.
