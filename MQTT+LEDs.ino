@@ -1,5 +1,5 @@
 /*
- * $Id: MQTT+LEDs.ino,v 1.3 2016/12/01 10:29:20 anoncvs Exp $
+ * $Id: MQTT+LEDs.ino,v 1.4 2016/12/06 21:04:31 anoncvs Exp $
  *
  * ESP8266 doorbell.  MQTT required.
  *
@@ -115,7 +115,7 @@ void callback(char *intopic, byte * inpayload, unsigned int length) {
  */
 boolean mqtt_reconnect() {
     if (client.connect((char *) clidbuff)) {
-        client.subscribe(TOPIC1);       /* Defined in user_config.h. */
+        client.subscribe(TOP_TIME);       /* Timestamp - Defined in user_config.h. */
 #ifdef DEBUG
         Serial.println("MQTT connected.");
 #endif
@@ -445,7 +445,11 @@ void loop() {
 #ifdef DEBUG
         Serial.println(buff);
 #endif
-        sendmqttMsg((char *) TOPIC2, buff);
+	/*
+	 * Publish data to the TOP_DATA topic (which is
+	 * defined in user_config.h).
+	 */
+        sendmqttMsg((char *) TOP_DATA, buff);
     }
 
     ChkAutoOff();

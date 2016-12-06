@@ -1,5 +1,5 @@
 /*
- * $Id: user_config.h,v 1.7 2016/12/01 10:28:14 anoncvs Exp $
+ * $Id: user_config.h,v 1.8 2016/12/06 21:05:41 anoncvs Exp $
  *
  * Configuration for local set-up (ie:- Access-point ID & PWD).
  */
@@ -95,8 +95,8 @@
 // #define TOPIC1		"YOUR/FIRST/TOPIC"	// !!You MUST change this!!"
 // #define TOPIC2		"YOUR/SECOND_TOPIC"	// !!You MUST change this!!"
 // #define TOPIC3		"YOUR_THIRD_TOPIC"	// !!You MUST change this!!"
-#define TOPIC1		"timestamp"
-#define TOPIC2		"Yellow/LDR"
+#define TOP_TIME	"timestamp"
+#define TOP_DATA	"Yellow/LDR"
 
 #define MQTT_RECONNECT_TIMEOUT 	5	/* In Seconds. */
 
