@@ -1,5 +1,5 @@
 /*
- * $Id: MQTT+LEDs.ino,v 1.5 2016/12/06 21:09:21 anoncvs Exp $
+ * $Id: MQTT+LEDs.ino,v 1.6 2016/12/06 21:26:24 anoncvs Exp $
  *
  * ESP8266 doorbell.  MQTT required.
  *
@@ -424,9 +424,17 @@ void setup() {
 
 
 void loop() {
-    ArduinoOTA.handle();
+    ArduinoOTA.handle();        /* Check for pending OTA updates. */
     yield();
-    RGB_loop();
+
+    RGB_loop();                 /* Blinkenlights update. */
+    yield();
+
+    /* Reconnect to MQTT server if not already connected. */
+    if ((WiFi.status() == WL_CONNECTED) && (!client.connected())) {
+        mqtt_reconnect();
+    }
+    client.loop();
     yield();
 
     /* Read the LDR attached to the ADC pin. */
@@ -453,12 +461,6 @@ void loop() {
         sendmqttMsg((char *) TOP_DATA, buff);
     }
 
-    ChkAutoOff();
-    yield();
-
-    if ((WiFi.status() == WL_CONNECTED) && (!client.connected())) {
-        mqtt_reconnect();
-    }
-    client.loop();
+    ChkAutoOff();               /* Check for auto switch-off timeout. */
     yield();
 }
